@@ -2,9 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/jamesoneill997/Go-URL/urlShort"
 	"net/http"
-
-	"github.com/gophercises/urlshort"
 )
 
 func main() {
