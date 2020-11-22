@@ -23,9 +23,9 @@ func MapHandler(pathsToUrls map[string]string, fallback http.Handler) http.Handl
 }
 
 func YAMLHandler(yml []byte, fallback http.Handler) (http.HandlerFunc, error) {
-	var p2URLs []pathToURL
+	var pathURLs []pathToURL
 
-	err := yaml.Unmarshal(yml, &p2URLs)
+	err := yaml.Unmarshal(yml, &pathURLs)
 
 	if err != nil {
 		return nil, err
@@ -33,7 +33,7 @@ func YAMLHandler(yml []byte, fallback http.Handler) (http.HandlerFunc, error) {
 
 	pathsToUrls := make(map[string]string)
 
-	for _, pu := range p2URLs {
+	for _, pu := range pathURLs {
 		pathsToUrls[pu.Path] = pu.URL
 	}
 
