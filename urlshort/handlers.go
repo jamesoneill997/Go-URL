@@ -42,5 +42,5 @@ func YAMLHandler(yml []byte, fallback http.Handler) (http.HandlerFunc, error) {
 
 type pathToURL struct {
 	Path string `yaml:"path"`
-	URL  string `yaml:"URL"`
+	URL  string `yaml:"url"`
 }
